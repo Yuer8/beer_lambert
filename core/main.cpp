@@ -19,9 +19,23 @@
 
 
 #include <iostream>
+#include "globals.hpp"
+
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-    cout << "Here we go" << endl;
+    /* Logging  */
+    google::InitGoogleLogging(argv[0]);
+    FLAGS_logtostderr = 1;
+
+    /* Initialize store house.
+     * 
+     * Create a bounding box with dimensions 1cm x 1cm x 1mm.
+     */
+    *pSolutionBox = *pSolutionBox + Bbox_3(0.0, 0.0, 0.0, 1e-2, 1e-2, 1e-3);
+    LOG(INFO) << "Created solution box with zmin " 
+        << (*pSolutionBox).zmin() << " zmax " << (*pSolutionBox).zmax()
+        << endl;
+    
 }

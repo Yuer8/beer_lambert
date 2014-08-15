@@ -4,6 +4,9 @@ PROJECT(Transmission)
 LIST(APPEND CMAKE_MODULE_PATH cmake_modules)
 
 SET(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+SET(CMAKE_BUILD_TYPE Debug)
+
+ADD_DEFINITIONS(-frounding-math)
 
 FIND_PACKAGE(CGAL REQUIRED)
 FIND_PACKAGE(Boost REQUIRED)
@@ -16,6 +19,7 @@ ADD_SUBDIRECTORY(core)
 ADD_EXECUTABLE(transmission.out core/main.cpp)
 
 TARGET_LINK_LIBRARIES(transmission.out
-    ${CGAL_LIBRARIES}
+    core
     ${GLOG_LIBRARIES}
+    ${CGAL_LIBRARIES}
 )

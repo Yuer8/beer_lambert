@@ -20,5 +20,12 @@
 #define  GLOBALS_INC
 
 #include <glog/logging.h>
+#include <CGAL/Bbox_3.h>
+#include <memory>
+
+using namespace CGAL;
+using namespace std;
+
+extern unique_ptr<Bbox_3> pSolutionBox;
 
 #endif   /* ----- #ifndef GLOBALS_INC  ----- */
