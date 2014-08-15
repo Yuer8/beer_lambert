@@ -20,42 +20,32 @@
 #define  SOLVENT_INC
 
 #include <string>
-#include <boost/assert.hpp>
-#include "globals.hpp"
+using namespace std;
 
 /**
  * @brief Solvent class.
  */
 
-using namespace std;
-using namespace boost;
 
 class Solvent
 {
     public:
-        Solvent()
-        
-
-        Solvent(string name, double density, double molar_mass)
+        Solvent();
+        Solvent(string name, double density, double molar_mass);
         ~Solvent();
 
         /**
          * @brief Compute molarity of a given solution when density and
          * molar_mass is known.
          */
-        void computeMolarity(void)
-        {
-            BOOST_ASSERT_MSG(density > 0.0, "Negative or zero density of solvent");
-            BOOST_ASSERT_MSG(molar_mass > 0.0, "Negative or zero molar_mass of solvent");
-            molariy = density / molar_mass;
-        }
+        void computeMolarity(void);
+
 
     public:
         string name;
         double density;
         double molar_mass;
         double molarity;
-
 };
 
 #endif   /* ----- #ifndef SOLVENT_INC  ----- */

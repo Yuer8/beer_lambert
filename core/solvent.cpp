@@ -16,9 +16,11 @@
  * ==============================================================================
  */
 
-#include "solvent.hpp"
+#include "solvent.h"
+#include <boost/assert.hpp>
+#include "globals.hpp"
 
-void Solvent::Solvent()
+Solvent::Solvent()
 {
     cerr << "Info: Using water as default solvent" << endl;
     name = "water";
@@ -27,7 +29,7 @@ void Solvent::Solvent()
     computeMolarity();
 }
 
-void Solvent::Solven(string name, double density, double molar_mass)
+Solvent::Solvent(string name, double density, double molar_mass)
 {
     name = name;
     density = density;
@@ -35,3 +37,10 @@ void Solvent::Solven(string name, double density, double molar_mass)
     computeMolarity();
 }
 
+
+void Solvent::computeMolarity()
+{
+    BOOST_ASSERT_MSG(density > 0.0, "Negative or zero density of solvent");
+    BOOST_ASSERT_MSG(molar_mass > 0.0, "Negative or zero molar_mass of solvent");
+    molarity = density / molar_mass;
+}

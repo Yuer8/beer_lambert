@@ -20,7 +20,5 @@
 #define  GLOBALS_INC
 
 #include <glog/logging.h>
-using namespace google;
-using namespace std;
 
 #endif   /* ----- #ifndef GLOBALS_INC  ----- */
