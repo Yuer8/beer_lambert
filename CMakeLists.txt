@@ -9,7 +9,7 @@ ADD_SUBDIRECTORY(core)
 
 ADD_EXECUTABLE(transmission.out core/main.cpp)
 
-TARGET_LINK_LIBRARIES(Transmission
+TARGET_LINK_LIBRARIES(transmission.out
     ${CGAL_LIBRARIES}
 )
 
