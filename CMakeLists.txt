@@ -7,7 +7,7 @@ INCLUDE_DIRECTORIES(include)
 
 ADD_SUBDIRECTORY(core)
 
-ADD_EXECUTABLE(Transmission core/main.cpp)
+ADD_EXECUTABLE(transmission.out core/main.cpp)
 
 TARGET_LINK_LIBRARIES(Transmission
     ${CGAL_LIBRARIES}
