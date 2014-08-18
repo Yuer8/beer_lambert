@@ -37,5 +37,11 @@ int main(int argc, char* argv[])
     LOG(INFO) << "Created solution box with zmin " 
         << (*pSolutionBox).zmin() << " zmax " << (*pSolutionBox).zmax()
         << endl;
+
+    /* Now, insert the solvent molecules in the box followed by solvent
+     * molecules. */
+    LOG(INFO) << "Creating solvent molecules in solution box";
+
+
     
 }
